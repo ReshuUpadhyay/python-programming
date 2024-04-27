@@ -1,0 +1,30 @@
+import random
+def roll_dice():
+    roll= random.randint(1, 6)
+    while True:
+        rollno=int(input("Press Enter to roll the dice="))
+        if 1<=rollno<=6:
+            if roll==rollno:
+                print("congratulation your guess was right  ")
+                print("You rolled:", rollno)
+                print("roll_come", roll)
+            else:
+                print("You rolled:",rollno )
+                print("roll_come", roll)
+                play_again()
+        else:
+            print("invalid choice")
+            roll_dice()
+def play_again():
+    play= input("Do you want to roll again? (yes/no): ")
+    if play.lower() == 'yes':
+        print("welcome again")
+        roll_dice()
+    elif play.lower()=="no":
+        print("thank you for playing ")
+        exit()
+    else:
+        print("invalid choice")
+        play_again()
+print("Welcome to the Roll the Dice Game!")
+roll_dice()
